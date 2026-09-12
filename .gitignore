@@ -1,0 +1,17 @@
+# Editor and desktop files
+*~
+*.swp
+*.swo
+.DS_Store
+
+# Python/tool caches
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Generated runtime data
+*.log
+*.tlog
+*.tlog.raw
+*.bag
+*.mcap
