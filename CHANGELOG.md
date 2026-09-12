@@ -9,3 +9,4 @@
 - 当前仓库未配置远程地址。
 - 新增 ROS1 环境文档，记录 Noetic/Gazebo Classic/MAVROS/Docker 的实测版本与架构。
 - 记录 ROS1 Iris 联合仿真基线成功、失败过程、最终 rosbag 证据和一键停止归档逻辑。
+- 新增 ROS1 Zephyr 普通固定翼任务定义；人工解锁后执行 AUTO 起飞、绕场与降落，当前仅完成静态检查。

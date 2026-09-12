@@ -56,3 +56,13 @@ cd /home/xanter/ros1simulation/ros1sim_260913_iris_setuptest
 ~~~
 
 start.sh 打开 GNOME Terminal 并创建独立 run。stop.sh 在可见终端请求 sudo，停止容器与 SITL、收尾 rosbag、检查残留并自动执行 finalize。
+
+## Zephyr 普通固定翼任务
+
+~~~bash
+cd /home/xanter/ros1simulation/ros1sim_260913_zephyr_circuit
+./scripts/check.sh
+./scripts/start.sh
+~~~
+
+任务控制器上传航线后停在人工解锁门。只有人工解锁终端输入 `ARM` 后才发送解锁命令；降落并自动解除武装后运行 `./scripts/stop.sh` 完成 rosbag 收尾和归档。
