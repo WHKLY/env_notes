@@ -2,7 +2,7 @@
 
 > 快照日期：2026-09-13（Asia/Shanghai）
 >
-> 当前阶段：可复现的 Noetic、Gazebo Classic 11、MAVROS 与主机 ArduPilot SITL 联合链已经建立；Iris 基线完成动态连接、话题记录和一键停止归档验证，尚未进行解锁与起飞。
+> 当前阶段：可复现的 Noetic、Gazebo Classic 11、MAVROS 与主机 ArduPilot SITL 联合链已经建立；Iris 基线完成连接与归档验证，Zephyr 普通固定翼已完成实际人工解锁、自动起飞、绕场、降落和自动解除武装。
 
 ## 当前已确认
 
@@ -49,11 +49,11 @@
 
 派生镜像：xanter/ros1-noetic-gazebo11:20260913，镜像 ID sha256:f7b402cf06d7a39a86603eeb2cf0285017d6d4694d154de0900557fc4ee0a03b。
 
-## 已准备的普通固定翼任务
+## 已验证的普通固定翼任务
 
-`/home/xanter/ros1simulation/ros1sim_260913_zephyr_circuit` 已完成静态构建。任务使用 Zephyr 单推进器飞翼、ArduPlane `gazebo-zephyr` frame、Gazebo Classic 气动插件和 MAVROS；任务上传后等待操作者输入 `ARM`，随后自动起飞、飞左矩形航线并自动降落。
+`/home/xanter/ros1simulation/ros1sim_260913_zephyr_circuit` 使用 Zephyr 单推进器飞翼、ArduPlane `gazebo-zephyr` frame、Gazebo Classic 气动插件和 MAVROS；任务上传后等待操作者输入 `ARM`，随后自动起飞、飞左矩形航线并自动降落。
 
-该任务截至 2026-09-13 尚未动态启动。首次实际运行必须检查 Classic 气动插件加载、滑跑方向、舵面响应和降落结果，不能仅凭静态检查标记为成功。
+动态验证 `run_20260913T015818+0800` 已成功完成全流程。任务用时 290.19 秒，最高相对高度 60.35 m，接地后自动解除武装；rosbag 正常闭合为 192,488,211 字节，停止退出码为 0，所有进程与 Docker service/socket 均已清理。
 
 ## 维护
 
