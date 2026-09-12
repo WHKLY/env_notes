@@ -86,3 +86,7 @@ run_20260913T011015+0800
 本机可用的 Zephyr 模型来自 `ardupilot_gazebo` 的 Gazebo Sim 历史分支，包含 `gz-sim-lift-drag-system` 等系统插件。ROS1 Noetic 链运行 Gazebo Classic 11，不能直接加载这些插件。
 
 `ros1sim_260913_zephyr_circuit` 固定模型来源提交 `8f3970a3d2bf0a5c4f283b969b39853e36716774`，保留几何、惯性和气动参数，把七个气动系统转换为 Classic `libLiftDragPlugin.so`，移除 Gazebo Sim 的 JointStatePublisher/ApplyJointForce，再接入 legacy `libArduPilotPlugin.so`。这仍需首次动态飞行验证，尤其要观察舵面方向、滑跑与降落。
+
+## 用户启动脚本不能假定安装了 ripgrep
+
+Codex 工具环境能调用 `rg`，但用户的普通交互 shell 中不一定安装或暴露该命令。固定翼实验最初因此在 `check.sh` 的最后两项检查退出，尚未启动 Docker。用户入口脚本已改用系统自带 `grep`；静态验证还要使用最小系统 PATH 重跑，避免把代理工具环境误当成本机用户环境。
