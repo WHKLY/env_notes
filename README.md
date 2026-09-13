@@ -16,7 +16,7 @@
 
 - 环境版本、路径、补丁或操作流程发生变化时，同步更新对应文档。
 - 新增或修改文档后先检查内容，再提交到本仓库。
-- 远端为 GitHub 私有仓库 `git@github.com:WHKLY/env_notes.git`，本地 `main` 跟踪 `origin/main`，通过 SSH 推送。
+- 远端为 GitHub 公开仓库 [WHKLY/env_notes](https://github.com/WHKLY/env_notes)，SSH 地址为 `git@github.com:WHKLY/env_notes.git`；本地 `main` 跟踪 `origin/main`。
 - 不提交密码、令牌、私钥、运行日志、构建输出或临时编辑器文件。
 
 历史记录见 [CHANGELOG.md](CHANGELOG.md)。

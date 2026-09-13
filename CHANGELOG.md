@@ -16,4 +16,5 @@
 - 全局复核 ROS1/ROS2 文档和当前本机状态，补充 `/home/xanter/ros1simulation/infra/noetic_gazebo11` 的结构、固定输入、构建、doctor、权限与服务生命周期。
 - 新增 `examples/ROS1` 与 `examples/ROS2`，将 Iris 基线、Zephyr 固定翼和 Skywalker X8 固定翼三个已验证实验整理为分层复现教程。
 - 修正 ROS2 旧状态：Skywalker X8 已完成全任务；标准实验运行结果位于 `ros2simulation/*/runs`，`sim_runs` 仅保留为公共 bringup 临时调试目录。
-- 创建 GitHub 私有仓库 `WHKLY/env_notes`，配置 SSH remote `origin`，并推送 `main`。
+- 创建 GitHub 仓库 `WHKLY/env_notes`，初始设为私有，配置 SSH remote `origin` 并推送 `main`。
+- 将 GitHub 仓库 `WHKLY/env_notes` 的可见性改为 Public，便于云端只读获取和协作。
