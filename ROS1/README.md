@@ -29,8 +29,14 @@
 - [03-runbook.md](03-runbook.md)：构建、启动、验证和停止顺序。
 - [04-troubleshooting.md](04-troubleshooting.md)：当前已知风险和排查入口。
 - [tips.md](tips.md)：本次构建和动态联调中实际遇到的问题。
+- [../examples/ROS1/README.md](../examples/ROS1/README.md)：infra、Iris 基线与 Zephyr 全任务的可复现教程。
 
-旧文档 [ROS1_Noetic_Docker_Environment.md](../../ROS1_Noetic_Docker_Environment.md) 保留为历史参考；与本目录冲突时以本目录的重新验证结果为准。
+
+## 共享基础设施
+
+`/home/xanter/ros1simulation/infra/noetic_gazebo11` 保存固定摘要 Dockerfile、Compose、入口脚本、legacy 插件 vendor 快照、GNOME Terminal 构建/doctor/shell 脚本及可再生成的 runtime 证据。派生镜像为 `xanter/ros1-noetic-gazebo11:20260913`。详细文件职责和复现步骤见 [ROS1 infra 示例](../examples/ROS1/00-noetic-gazebo11-infra.md)。
+
+实验目录与 infra 分开：infra 是多个 ROS1 实验共享的软件栈，`ros1sim_*` 保存单个实验定义和每次 run。
 
 ## 目标链路
 

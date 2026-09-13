@@ -16,6 +16,7 @@
 | [06-troubleshooting.md](06-troubleshooting.md) | 已知问题和排查步骤 |
 | [07-maintenance.md](07-maintenance.md) | 更新、日志、缓存和回归检查 |
 | [tips.md](tips.md) | 本机实际踩坑、原因、修复和防复发规则 |
+| [../examples/ROS2/README.md](../examples/ROS2/README.md) | Skywalker 普通固定翼的代码构建、运行和归档教程 |
 
 ## 每个新终端先加载
 
@@ -40,6 +41,10 @@ ros2 launch ardupilot_gz_bringup iris_runway.launch.py   rviz:=true use_gz_tf:=t
 
 # Alti Transition QuadPlane
 ros2 launch ardupilot_gz_bringup alti_transition_runway.launch.py   rviz:=true use_instance_dir:=True
+
+# Skywalker X8 普通固定翼标准实验
+cd /home/xanter/ros2simulation/ros2sim_260912_setuptest
+./scripts/start.sh
 ~~~
 
 日常启动请使用 [04-runbook.md](04-runbook.md) 的 GNOME Terminal 命令。它会创建独立运行目录，避免 mav.tlog、mav.parm、terrain 和飞行日志出现在家目录。
@@ -54,7 +59,9 @@ ros2 launch ardupilot_gz_bringup alti_transition_runway.launch.py   rviz:=true u
 | ardupilot_gz 实体仓库 | /home/xanter/Projects/ardupilot_gz |
 | ardupilot_gz 工作区链接 | /home/xanter/ros2_ws/src/ardupilot_gz |
 | MAVProxy 虚拟环境 | /home/xanter/venv-ardupilot |
-| 推荐运行目录 | /home/xanter/sim_runs |
+| 实验根目录 | /home/xanter/ros2simulation |
+| 标准示例 | /home/xanter/ros2simulation/ros2sim_260912_setuptest |
+| 临时公共 bringup 运行 | /home/xanter/sim_runs |
 
 ## 文档维护
 

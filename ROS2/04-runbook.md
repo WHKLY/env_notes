@@ -1,6 +1,6 @@
 # GNOME Terminal 启动与操作
 
-每次运行建立独立目录，避免 mav.tlog、mav.parm、terrain 和 SITL 数据散落到家目录。
+每次运行建立独立目录，避免 mav.tlog、mav.parm、terrain 和 SITL 数据散落到家目录。新实验统一放在 `/home/xanter/ros2simulation/ros2sim_*/runs/run_*`；下面的 `~/sim_runs` 命令保留为公共 bringup 的临时调试方式。
 
 ## Iris
 
@@ -90,3 +90,17 @@ ps -eo pid,comm,args |   grep -E 'gz sim|arducopter|arduplane|micro_ros_agent|pa
 ~~~
 
 MAVProxy 会在当前目录写 mav.tlog、mav.tlog.raw、mav.parm；use_instance_dir:=True 会将 eeprom.bin、BIN 日志和 terrain 放入实例目录。
+
+
+## Skywalker X8 标准实验
+
+完整普通固定翼任务使用：
+
+~~~bash
+cd /home/xanter/ros2simulation/ros2sim_260912_setuptest
+./scripts/build.sh
+./scripts/check.sh
+./scripts/start.sh
+~~~
+
+在 MANUAL ARM 终端输入 `ARM` 后，控制器自动切 AUTO、绕场并 LAND。该实验当前需要分别在主 launch 与 rosbag 终端按 Ctrl+C，再运行 `./scripts/finalize.sh`。详细代码改动、观察点与成功证据见 [examples/ROS2](../examples/ROS2/README.md)。

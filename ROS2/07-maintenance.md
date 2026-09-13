@@ -41,9 +41,9 @@ git -C /home/xanter/Projects/ardupilot_gz diff --   ardupilot_gz_bringup/launch/
 2. 构建修改过的包。
 3. 启动 Iris，检查实体、JSON、DDS、/clock、/ap/status。
 4. 停止并确认无残留。
-5. 启动 Alti，重复链路检查。
-6. 仿真内执行 prearm、GUIDED、arm、20 m takeoff。
-7. 停止，归档 launch.log，更新本文档。
+5. 启动 Alti，重复链路检查，并执行 prearm、GUIDED、arm、20 m takeoff。
+6. 运行 `ros2sim_260912_setuptest` 的 Skywalker 静态检查；涉及模型、DDS、任务控制或 bridge 的变更还应完成一次人工解锁后的 AUTO 全任务。
+7. 正常停止 bag 与 launch，执行 finalize，核对 DONE/FAILED、结果 JSON 和无残留，再更新文档。
 
 ## 系统目录原则
 

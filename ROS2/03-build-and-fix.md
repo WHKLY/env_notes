@@ -63,6 +63,7 @@ git -C /home/xanter/Projects/ardupilot_gz diff --   ardupilot_gz_bringup/launch/
 - /clock、/imu、/odometry 有消息。
 - /ap/status、/ap/pose/filtered 有消息。
 - Alti 在 GUIDED 解锁、起飞，达到约 20.07 m 相对高度。
+- Skywalker X8 在私有 overlay 中完成普通固定翼人工解锁、AUTO 起飞、绕场、LAND 与自动解除武装；成功 run 最高相对高度 60.47 m。
 - ardupilot_sitl 相关测试曾通过 24 项。
 
 ardupilot_gz_bringup 运行通过。flake8 和 pep257 对多个上游 launch 文件仍报既有风格问题，这不是联合仿真功能失败。

@@ -49,8 +49,10 @@ n 为实例号，默认 n=0。
 
 ## 模型
 
-Iris 入口是 iris_runway.launch.py，使用 arducopter；参数包含 copter.parm、gazebo-iris-gimbal.parm、dds_udp.parm、dds_use_ns.parm。它桥接相机、气压计、IMU、磁力计、NavSat、GPSFix、电池等数据。
+Iris 入口是 `iris_runway.launch.py`，使用 arducopter；参数包含 copter.parm、gazebo-iris-gimbal.parm、dds_udp.parm、dds_use_ns.parm。它桥接相机、气压计、IMU、磁力计、NavSat、GPSFix、电池等数据。
 
-Alti Transition 入口是 alti_transition_runway.launch.py，使用 arduplane 和 alti_transition_quad；参数包含 quadplane.parm、alti_transition_quad.param、dds_udp.parm、dds_use_ns.parm。它是当前已经完整验证的一键 ROS 2 固定翼 QuadPlane 入口。zephyr、skywalker_x8 等常规固定翼模型有资源，但尚无同等级的一键 bringup 验证。
+Alti Transition 入口是 `alti_transition_runway.launch.py`，使用 arduplane 和 alti_transition_quad，已经完成 QuadPlane 联合启动与 GUIDED 起飞验证。
+
+Skywalker X8 普通固定翼使用实验私有 `setuptest_bringup/skywalker_setuptest.launch.py`。它派生临时 SDF、注入 OdometryPublisher，并组合 ArduPlane、DDS Agent、bridge、Gazebo 与 RViz。`run_20260912T235453+0800` 已完成手动解锁、AUTO 起飞、绕场、自动降落和自动解除武装。实现见 [Skywalker 示例](../examples/ROS2/README.md)。
 
 Gazebo 通过 /clock 提供仿真时间，自建节点应使用 use_sim_time=true。use_gz_tf:=true 会桥接 Gazebo TF；增加发布者前需检查是否与 robot_state_publisher 重复。

@@ -6,6 +6,9 @@
 
 - [ROS1/README.md](ROS1/README.md)：ROS Noetic、Gazebo Classic、MAVROS 和 ArduPilot SITL 联合仿真链。
 - [ROS2/README.md](ROS2/README.md)：ROS 2、Gazebo、ArduPilot SITL 及相关联合仿真链。
+- [examples/README.md](examples/README.md)：三个已验证实验的分层复现教程，包含代码改动、操作步骤、判据与历史证据。
+
+仿真实验定义位于 `/home/xanter/ros1simulation` 和 `/home/xanter/ros2simulation`；本仓库只保存环境事实和教程，不复制大型 run 数据。
 
 ## 版本管理
 

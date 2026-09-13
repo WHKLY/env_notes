@@ -58,3 +58,12 @@ Focal Mesa 不识别本机 Raptor Lake iGPU。基础链使用 LIBGL_ALWAYS_SOFTW
 ## local_position 暂时没有消息
 
 等待 EKF 初始化和 origin set。MAVROS connected 只证明 MAVLink 心跳建立，不能证明位置估计已就绪。
+
+
+## Zephyr 地面抖动并报告 Accels inconsistent
+
+不要强制解锁。检查机腹或桨叶是否使用复杂 mesh 直接参与跑道接触，并查看 VIBRATION 与 IMU clipping。当前实验使用简化 box 机身碰撞体、三点低摩擦球形滑橇，并移除非必要桨叶碰撞体；对应代码和修复前后证据见 [Zephyr 构建示例](../examples/ROS1/02-zephyr-circuit-build.md)。
+
+## 用户 shell 报 rg: command not found
+
+用户入口脚本不能假定存在 Codex 工具环境中的 ripgrep。启动前检查使用系统 `grep`；若新脚本确实需要 `rg`，应先把它声明为依赖并在普通交互 shell 验证。

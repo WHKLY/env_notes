@@ -54,3 +54,13 @@
 - 显式增加 MAVROS 1.20.1、MAVROS extras、GeographicLib 工具与数据。
 - legacy ArduPilotPlugin 动态库依赖检查通过。
 - 容器运行用户 UID/GID 均为 1000。
+
+
+## 当前目录布局
+
+- `/home/xanter/ros1simulation/infra/noetic_gazebo11`：共享镜像定义、Compose、entrypoint、固定 legacy vendor、可见构建与 doctor 脚本。
+- `/home/xanter/ros1simulation/ros1sim_260913_iris_setuptest`：ArduCopter/Iris 最小联合链基线。
+- `/home/xanter/ros1simulation/ros1sim_260913_zephyr_circuit`：ArduPlane/Zephyr 人工解锁与 AUTO 全任务。
+- `/home/xanter/ros1simulation/AGENTS.md`：目录命名、运行隔离、权限和验证规则。
+
+三个层次分别代表公共基础设施、低风险连通性实验和完整飞行任务。具体复现见 `env_notes/examples/ROS1/`。

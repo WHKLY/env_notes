@@ -48,6 +48,7 @@ SITL/MAVProxy 的当前目录、Gazebo 日志和 ROS bag 都指向本次 run，�
 cd /home/xanter/ros1simulation/infra/noetic_gazebo11
 ./scripts/build-visible.sh
 ./scripts/doctor-visible.sh
+./scripts/shell-visible.sh
 
 cd /home/xanter/ros1simulation/ros1sim_260913_iris_setuptest
 ./scripts/check.sh
@@ -66,3 +67,5 @@ cd /home/xanter/ros1simulation/ros1sim_260913_zephyr_circuit
 ~~~
 
 任务控制器上传航线后停在人工解锁门。只有人工解锁终端输入 `ARM` 后才发送解锁命令；降落并自动解除武装后运行 `./scripts/stop.sh` 完成 rosbag 收尾和归档。
+
+2026-09-13 的 `run_20260913T015818+0800` 已完整验证该流程。首次从基础环境复现时按 [examples/ROS1](../examples/ROS1/README.md) 的 infra、Iris、Zephyr 顺序操作。
