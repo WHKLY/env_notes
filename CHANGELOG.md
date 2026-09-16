@@ -1,5 +1,13 @@
 # 变更记录
 
+## 2026-09-17
+
+- 新增 LubanCat-5 V2 环境文档，记录主机与板子的系统版本、设备身份和关键路径。
+- 将板子唯一的 Type-C 口配置为 ADB + RNDIS 复合设备，并固定两端 MAC 与 `10.42.0.0/24` 地址。
+- 主机通过 NetworkManager `shared` 模式为板子提供路由和 DNS；保留板子的手机 USB 共享网络配置作为低优先级备用链路。
+- 记录 NoMachine 客户端、板端服务和无物理显示器虚拟桌面配置；板端虚拟桌面单独使用 Mesa llvmpipe，避免 Mali EGL 在无头环境中使 GNOME Shell 退出。
+- 完成断电重启验证：USB 网络、ADB、默认路由、无头启动配置和 NoMachine 监听均能自动恢复。
+
 ## 2026-09-13
 
 - 将 /home/xanter/Documents/env_notes 初始化为独立的本地 Git 仓库。
