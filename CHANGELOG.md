@@ -8,6 +8,9 @@
 - 记录 NoMachine 客户端、板端服务和无物理显示器虚拟桌面配置；板端虚拟桌面单独使用 Mesa llvmpipe，避免 Mali EGL 在无头环境中使 GNOME Shell 退出。
 - 完成断电重启验证：USB 网络、ADB、默认路由、无头启动配置和 NoMachine 监听均能自动恢复。
 - 新增另一台 Ubuntu 电脑复用教程，覆盖 ADB、固定 RNDIS 接口、NetworkManager 网络共享、NoMachine 客户端、环境文档同步和故障排查，并明确区分电脑端与板端命令。
+- 新增 LubanCat 未来平台路线，规划 Ubuntu 20 eMMC Git 基线、Ubuntu 24 SD 独立验证、eMMC 迁移门槛、分系统 Deploy Key 及回退策略。
+- 记录板端 Git 2.25.1、私有环境仓库、专用 Deploy Key、首次远端提交以及本机与板端仓库的安全边界。
+- 修订跨电脑复用教程：私有板端仓库使用新电脑自己的 GitHub 身份 clone；ADB 临时快照排除 `.git`，不复制板端密钥。
 
 ## 2026-09-13
 

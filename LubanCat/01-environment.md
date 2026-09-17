@@ -39,8 +39,22 @@
 | NoMachine 服务端 | `nomachine` 9.9.6-2 |
 | USB 网络接口 | `usb0`，`10.42.0.2/24` |
 | ZeroTier | `ztxoogfbja`，`10.67.218.100/24` |
+| Git | 2.25.1，`/usr/bin/git` |
+| 板端环境仓库 | `/home/cat/Documents/env_notes`，`main` 分支 |
+| 板端 GitHub 远端 | `WHKLY/lubancat-env-notes`，Private |
 
 ADB 以 root 身份进入板子。日常图形登录应继续使用普通用户 `cat`。
+
+## 环境文档版本管理
+
+本机与板子的环境文档使用两个独立仓库：
+
+| 范围 | 本地路径 | GitHub 仓库 | 可见性 |
+|---|---|---|---|
+| 本机综合环境 | `/home/xanter/Documents/env_notes` | `WHKLY/env_notes` | Public |
+| LubanCat 板端环境 | `/home/cat/Documents/env_notes` | `WHKLY/lubancat-env-notes` | Private |
+
+板端仓库由 `cat` 用户维护，使用仅限该私有仓库的 Deploy Key。首次提交 `0cecfe369d8ae89296a99bbca4afd897a8b74814` 已推送并与远端 `main` 对齐。密钥文件不属于环境文档，不在本机仓库和板端仓库之间复制。
 
 ## 重启验证结果
 

@@ -252,7 +252,7 @@ chmod +x "$HOME/Desktop/LubanCat-NoMachine.desktop"
 
 ## 8. 同步环境文档
 
-主机侧配置说明已保存在公开的 `env_notes` 仓库。
+主机侧配置说明保存在公开仓库 `WHKLY/env_notes`：
 
 ### 新电脑执行
 
@@ -263,16 +263,26 @@ git clone https://github.com/WHKLY/env_notes.git \
   "$HOME/Documents/env_notes"
 ~~~
 
-板子自身的详细环境文档位于 `/home/cat/Documents/env_notes`，可以另存到新电脑：
+板子自身的详细环境文档位于私有仓库 `WHKLY/lubancat-env-notes`。新电脑已经获得该私有仓库访问权限并配置自己的 GitHub 身份时，优先独立 clone：
 
 ### 新电脑执行
 
 ~~~bash
-adb pull /home/cat/Documents/env_notes \
+git clone git@github.com:WHKLY/lubancat-env-notes.git \
   "$HOME/Documents/lubancat-board-env_notes"
 ~~~
 
-板端文档包含系统、驱动、RKNN、项目产物和维护风险，但不包含模型文件和图片数据。
+不要把板子的 Deploy Key 私钥复制到新电脑。新电脑应使用自己的 GitHub 账户凭据；若只需要临时离线快照，可以通过 ADB 复制文档但排除 `.git`：
+
+### 新电脑执行
+
+~~~bash
+mkdir -p "$HOME/Documents/lubancat-board-env_notes-snapshot"
+adb exec-out 'tar -C /home/cat/Documents/env_notes --exclude=.git -cf - .' |
+  tar -C "$HOME/Documents/lubancat-board-env_notes-snapshot" -xf -
+~~~
+
+板端仓库只包含系统、驱动、RKNN、项目产物和维护风险等文本记录，不包含模型文件、图片数据或 SSH 密钥。
 
 ## 9. 故障排查
 
