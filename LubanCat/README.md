@@ -28,6 +28,7 @@ NoMachine 登录使用板子系统用户 `cat` 和该用户当前密码。密码
 - [01-environment.md](01-environment.md)：主机和板子的实测环境事实。
 - [02-usb-network.md](02-usb-network.md)：USB Gadget、固定地址、网络共享和手机备用链路。
 - [03-nomachine.md](03-nomachine.md)：客户端入口、板端无头桌面实现及故障恢复。
+- [另一台 Ubuntu 电脑复用教程](../examples/LubanCat/README.md)：从新电脑开始恢复 ADB、USB 共享网络和 NoMachine，逐段标明命令运行位置。
 
 ## 安全与边界
 

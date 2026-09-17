@@ -7,6 +7,7 @@
 - 主机通过 NetworkManager `shared` 模式为板子提供路由和 DNS；保留板子的手机 USB 共享网络配置作为低优先级备用链路。
 - 记录 NoMachine 客户端、板端服务和无物理显示器虚拟桌面配置；板端虚拟桌面单独使用 Mesa llvmpipe，避免 Mali EGL 在无头环境中使 GNOME Shell 退出。
 - 完成断电重启验证：USB 网络、ADB、默认路由、无头启动配置和 NoMachine 监听均能自动恢复。
+- 新增另一台 Ubuntu 电脑复用教程，覆盖 ADB、固定 RNDIS 接口、NetworkManager 网络共享、NoMachine 客户端、环境文档同步和故障排查，并明确区分电脑端与板端命令。
 
 ## 2026-09-13
 
